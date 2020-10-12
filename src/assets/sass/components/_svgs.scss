@@ -1,0 +1,32 @@
+.leaf {
+  position: absolute;
+  display: inline;
+  width: 17rem;
+  right: 0;
+  bottom: 0;
+  opacity: 0.35;
+  transform: rotate(-35deg);
+  z-index: -1;
+}
+
+.project-svgs {
+  width: 100%;
+}
+
+.social-media-icons {
+  margin-top: 1rem;
+  &__icon {
+    display: inline-block;
+    width: 3rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    fill: $primary-grey;
+  }
+}

@@ -1,0 +1,43 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 30vh 70vh;
+  grid-template-areas:
+    "."
+    "content";
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-size: 80%;
+    background-repeat: repeat;
+    background-position: 0 0;
+    opacity: 0.6;
+    animation: shift 15000s linear infinite;
+    z-index: -100;
+  }
+
+  &__content {
+    grid-area: content;
+    margin-left: var(--side-margin);
+    color: #82d4bb;
+    // -webkit-text-stroke-width: 4px;
+    // -webkit-text-stroke-color: #82d4bb;
+    // -webkit-text-fill-color: #fff;
+    h1 {
+      font-size: 16vw;
+      font-weight: 700;
+    }
+  }
+}
+
+@keyframes shift {
+  to {
+    background-position: 1000000% -500000%;
+  }
+}
