@@ -17,7 +17,7 @@
     background-size: 80%;
     background-repeat: repeat;
     background-position: 0 0;
-    opacity: 0.6;
+    opacity: 0.35;
     animation: shift 15000s linear infinite;
     z-index: -100;
   }
@@ -25,13 +25,12 @@
   &__content {
     grid-area: content;
     margin-left: var(--side-margin);
-    color: #82d4bb;
+    color: #883955;
     // -webkit-text-stroke-width: 4px;
     // -webkit-text-stroke-color: #82d4bb;
     // -webkit-text-fill-color: #fff;
     h1 {
       font-size: 16vw;
-      font-weight: 700;
     }
   }
 }

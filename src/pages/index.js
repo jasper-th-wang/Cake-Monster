@@ -14,7 +14,7 @@ const IndexPage = () => {
         <div className="hero__bg"
           style={ { backgroundImage: `url(${ cakeBackground })` } }></div>
         <div className="hero__content">
-          <h1> More than just a piece of cake.</h1>
+          <h1>If you can dream it,<br />we can design it.</h1>
         </div>
       </div>
     </>
