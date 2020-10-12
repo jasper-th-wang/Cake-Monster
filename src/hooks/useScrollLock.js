@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-export default function useScrollLock(toggled) {
+const useScrollLock = (toggled) => {
   const scrollLockTarget = useRef(null);
 
   useEffect(() => {
@@ -15,3 +15,5 @@ export default function useScrollLock(toggled) {
 
   return scrollLockTarget;
 }
+
+export default useScrollLock;

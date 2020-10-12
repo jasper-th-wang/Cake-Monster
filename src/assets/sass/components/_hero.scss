@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 100vh;
+  height: 120vh;
   display: grid;
   grid-template-rows: 30vh 70vh;
   grid-template-areas:
@@ -31,6 +31,9 @@
     // -webkit-text-fill-color: #fff;
     h1 {
       font-size: 16vw;
+    }
+    p {
+      font-size: 7vw;
     }
   }
 }

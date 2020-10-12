@@ -2,10 +2,14 @@
 
 // Global (every pages)
 html {
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 body {
   overflow-x: hidden;
   margin: 0;
+}
+
+.main-container {
+  overflow-x: hidden;
 }

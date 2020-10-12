@@ -1,0 +1,98 @@
+.section {
+  position: relative;
+  padding: 3rem var(--side-margin) 3rem var(--side-margin);
+
+  @media only screen and (min-width: 1200px) {
+    padding: 6rem var(--side-margin) 6rem var(--side-margin);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+    color: $primary-grey;
+  }
+
+  &--intro {
+    padding: 5rem var(--side-margin) 5rem var(--side-margin);
+
+    @media only screen and (min-width: 1200px) {
+      padding: 6rem var(--side-margin) 6rem var(--side-margin);
+    }
+  }
+
+  &--white {
+    color: $primary-grey;
+  }
+
+  &--red {
+    color: $primary-grey;
+    background-color: $primary-red;
+  }
+
+  &--grey {
+    background-color: $primary-grey;
+    color: #ffffff;
+
+    @media only screen and (min-width: 1200px) {
+      // temporary color
+      background-color: $secondary-grey;
+    }
+
+    p {
+      color: currentColor;
+    }
+  }
+
+  &--about-us {
+    padding: calc(var(--side-margin) * 1.5);
+    // padding-left: calc(var(--side-margin) * 2);
+    // padding-right: calc(var(--side-margin) * 2);
+  }
+
+  &__content {
+    position: relative;
+    padding: 3rem 0 3rem 0;
+
+    p:not(:last-child) {
+      margin-block-end: 1em;
+    }
+
+    p {
+      @media only screen and (min-width: 992px) {
+        margin-right: 20%;
+      }
+    }
+    &--about-us {
+      p {
+        @media only screen and (min-width: 992px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--no-heading {
+      padding: 0;
+    }
+
+    &--grey-lg {
+      p {
+        color: $secondary-grey;
+        &:first-child {
+          font-size: 1.25rem;
+          color: $primary-grey;
+        }
+      }
+    }
+    &--white-lg {
+      p {
+        color: #ffffff;
+        &:first-child {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
