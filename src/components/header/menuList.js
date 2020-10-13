@@ -14,15 +14,10 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
 
   const scrollLockTarget = useScrollLock(menuToggled);
 
+
   const parentVariants = {
-    hidden: {
-      display: 'none',
-      transition: {
-        when: 'afterChildren'
-      }
-    },
+    hidden: {},
     visible: {
-      display: 'block',
       transition: {
         // type: 'spring',
         // mass: 10,
@@ -83,7 +78,22 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
   }
 
   return (
-    <div className={ classes.menuContainer }>
+    <motion.div
+      className={ classes.menuContainer }
+      // animate={ menuToggled ? "visible" : "hidden" }
+      animate={
+        menuToggled ?
+          {
+            display: 'block'
+          } :
+          {
+            display: 'none',
+            transition: {
+              delay: 2, // display none after children finish animation ('when' doesn't work for some reason)
+            }
+          }
+      }
+    >
       <motion.div
         animate={ menuToggled ?
           {
@@ -128,7 +138,7 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
           </motion.div>
         </motion.ul>
       </div>
-    </div>
+    </motion.div >
 
   );
 }

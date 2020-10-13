@@ -70,26 +70,6 @@ li {
     top: -100vw;
     right: -100vw;
   }
-
-  // transition: all 1.5s cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
-
-  &.menuBackgroundClicked {
-    // height: 200vh;
-    // width: 200vh;
-    // transition: all 1s cubic-bezier(0.33, 1, 0.68, 1);
-    // transform: scale(1000);
-    // clip-path: circle(200% at top right);
-
-    // @media screen and (min-width: 580px) {
-    //   height: 250vh;
-    //   width: 250vh;
-    // }
-
-    // @media screen and (orientation: landscape) {
-    //   height: 250vw;
-    //   width: 250vw;
-    // }
-  }
 }
 
 .menuListContact {

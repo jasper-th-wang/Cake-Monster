@@ -13,3 +13,15 @@ $secondary-grey: #949494;
     --side-margin: 7%;
   }
 }
+
+@keyframes shift {
+  to {
+    background-position: 1000000% -500000%;
+  }
+}
+
+@keyframes arrow {
+  to {
+    background-position: 1000% 0;
+  }
+}

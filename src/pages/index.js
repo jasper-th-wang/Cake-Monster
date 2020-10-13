@@ -14,8 +14,8 @@ const IndexPage = () => {
         <div className="hero__bg"
           style={ { backgroundImage: `url(${ cakeBackground })` } }></div>
         <div className="hero__content">
-          <h1>If you can dream it,<br />we can design it.</h1>
-          <p>No, really, we mean it.</p>
+          <h1>If you can dream it,<br />I can design it.</h1>
+          <p>No, really, I mean it.</p>
         </div>
       </div>
       <section className="section section--white">

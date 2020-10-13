@@ -7,6 +7,8 @@
     "."
     "content";
 
+  @include jaggedEdges;
+
   &__bg {
     position: absolute;
     top: 0;
@@ -17,29 +19,27 @@
     background-size: 80%;
     background-repeat: repeat;
     background-position: 0 0;
-    opacity: 0.35;
-    animation: shift 15000s linear infinite;
+    // opacity: 0.35;
+    opacity: 0.6;
+    animation: shift 50000s linear infinite;
     z-index: -100;
   }
 
   &__content {
     grid-area: content;
     margin-left: var(--side-margin);
+
     color: #883955;
     // -webkit-text-stroke-width: 4px;
     // -webkit-text-stroke-color: #82d4bb;
     // -webkit-text-fill-color: #fff;
     h1 {
-      font-size: 16vw;
+      font-size: 14vw;
+      color: #fff;
+      text-shadow: -5px 4px 0px #ffb6c1;
     }
     p {
       font-size: 7vw;
     }
-  }
-}
-
-@keyframes shift {
-  to {
-    background-position: 1000000% -500000%;
   }
 }
