@@ -7,7 +7,7 @@
     "."
     "content";
 
-  @include jaggedEdges;
+  @include jaggedEdges($primary-green);
 
   &__bg {
     position: absolute;
@@ -29,17 +29,20 @@
     grid-area: content;
     margin-left: var(--side-margin);
 
-    color: #883955;
+    color: $secondary-pink;
     // -webkit-text-stroke-width: 4px;
     // -webkit-text-stroke-color: #82d4bb;
     // -webkit-text-fill-color: #fff;
+
     h1 {
-      font-size: 14vw;
+      // font-size: 14vw;
+      font-size: 3em;
       color: #fff;
-      text-shadow: -5px 4px 0px #ffb6c1;
+      text-shadow: -5px 4px 0px $primary-green;
     }
     p {
-      font-size: 7vw;
+      font-size: 1.4em;
+      color: #303030;
     }
   }
 }

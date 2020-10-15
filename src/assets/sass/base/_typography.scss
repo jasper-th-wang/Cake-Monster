@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 html {
   font-family: "Judson", serif;
-  font-size: 16px;
+  font-size: calc(16px + 0.5vw);
 
-  @media only screen and (min-width: 768px) {
-    font-size: 18px;
-  }
+  // @media only screen and (min-width: 768px) {
+  //   font-size: 18px;
+  // }
 }
 
 h1 {
@@ -33,5 +33,6 @@ p {
 li {
   font-size: 2.4em;
   font-family: "Archivo Black", sans-serif;
-  color: #ffb6c1;
+  // color: #ffb6c1;
+  // text-shadow: -4px 4px 0px $primary-pink;
 }

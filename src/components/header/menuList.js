@@ -10,7 +10,7 @@ import WechatSVG from '../../assets/svgs/wechat.inline.svg';
 const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
 
   // item that is an array contains the name of the page and the camel case of it for Link
-  const menuItems = [['Home', ''], ['Gallery', 'gallery'], ['About us', 'about-us'], ['Contact us', 'contact-us']];
+  const menuItems = [['Home', ''], ['Services', 'services'], ['Gallery', 'gallery'], ['About me', 'about-me']];
 
   const scrollLockTarget = useScrollLock(menuToggled);
 
@@ -57,6 +57,7 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
   const liVariants = {
     hidden: {
       height: '0rem',
+      overflow: 'hidden',
       transition: {
         // duration: 0.7,
         type: 'spring',
@@ -67,11 +68,12 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
     },
     visible: {
       height: '2.6rem',
+      overflow: 'visible',
       transition: {
         // duration: 0.7,
         type: 'spring',
         mass: 5,
-        stiffness: 1000,
+        stiffness: 1500,
         damping: 300,
       }
     }

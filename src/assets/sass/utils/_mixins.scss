@@ -1,3 +1,5 @@
+@use "sass:string" as string;
+
 @mixin dimImage {
   &::after {
     content: "";
@@ -11,15 +13,17 @@
   }
 }
 
-@mixin jaggedEdges {
+@mixin jaggedEdges($nextColor) {
+  // @debug string.slice($nextColor, 2, 6);
+  $colorStr: quote($nextColor);
+  $colorCode: str-slice($colorStr, 2, 7);
   &::after {
     content: "";
     bottom: 0;
     left: 0;
-    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none"><polygon style="fill:white;" points="0,1 0.5,0.5 1,1 "/></svg>');
-    background-size: 30px 30px;
+    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none"><polygon style="fill:%23#{$colorCode};" points="0,1 0.5,0.5 1,1 "/></svg>');
+    height: 3.5rem;
     width: 100%;
-    height: 30px;
     position: absolute;
     animation: arrow 100s linear infinite;
   }

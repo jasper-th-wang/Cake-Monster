@@ -26,10 +26,14 @@
   &--white {
     color: $primary-grey;
   }
-
-  &--red {
+  &--pink {
     color: $primary-grey;
-    background-color: $primary-red;
+    background-color: $primary-pink;
+  }
+
+  &--green {
+    color: $primary-grey;
+    background-color: $primary-green;
   }
 
   &--grey {

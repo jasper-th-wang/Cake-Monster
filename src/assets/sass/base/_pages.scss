@@ -13,3 +13,8 @@ body {
 .main-container {
   overflow-x: hidden;
 }
+
+// index:
+.pink-edges {
+  @include jaggedEdges($primary-pink);
+}
