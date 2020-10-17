@@ -15,6 +15,22 @@ body {
 }
 
 // index:
-.pink-edges {
+.intro-sec {
   @include jaggedEdges($primary-pink);
+}
+
+.service-sec {
+  @include jaggedEdges(#fff);
+}
+
+.tea-sec {
+  @include jaggedEdges($primary-pink);
+}
+
+.about-sec {
+  // @include jaggedEdges($primary-green);
+}
+
+.about-content {
+  text-align: center;
 }

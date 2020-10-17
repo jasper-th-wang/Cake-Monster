@@ -1,5 +1,11 @@
 @use "sass:string" as string;
 
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
 @mixin dimImage {
   &::after {
     content: "";
@@ -13,17 +19,132 @@
   }
 }
 
+@mixin duotone-pink($pink: true) {
+  position: relative;
+
+  img {
+    filter: grayscale(100%) contrast(1.2) brightness(0.8);
+    transition: opacity 500ms ease 0s, filter 1s 0.3s, transform 1s !important;
+  }
+
+  &:hover img {
+    filter: grayscale(0) contrast(1) brightness(1);
+    transform: scale(1.1);
+  }
+
+  @if $pink {
+    &::before {
+      background-color: $secondary-pink;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: hard-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    &::after {
+      background-color: $primary-pink;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: soft-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+  } @else {
+    &::before {
+      background-color: $primary-green;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: hard-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    &::after {
+      background-color: $secondary-green;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: soft-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+  }
+
+  &::after,
+  &::before {
+    transition: all 2s;
+  }
+
+  &:hover {
+    &::after,
+    &::before {
+      background-color: transparent;
+    }
+  }
+}
+
+@mixin duotone-bw {
+  position: relative;
+
+  img {
+    filter: grayscale(100%) contrast(1.4) brightness(1.2);
+  }
+
+  &::before {
+    background-color: #000000;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  &::after {
+    background-color: #1d1d37;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: exclusion;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
 @mixin jaggedEdges($nextColor) {
   // @debug string.slice($nextColor, 2, 6);
   $colorStr: quote($nextColor);
   $colorCode: str-slice($colorStr, 2, 7);
   &::after {
     content: "";
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none"><polygon style="fill:%23#{$colorCode};" points="0,1 0.5,0.5 1,1 "/></svg>');
     height: 3.5rem;
     width: 100%;
+    background-size: 3.5rem 3.5rem;
     position: absolute;
     animation: arrow 100s linear infinite;
   }

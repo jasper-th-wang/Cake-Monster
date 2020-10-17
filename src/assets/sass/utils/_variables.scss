@@ -1,11 +1,15 @@
-$primary-green: #9ed9ccff;
-$primary-pink: #ffdde2ff;
-$secondary-pink: #faa094ff;
+$primary-green: #9ed9cc;
+$secondary-green: #008c76;
+$primary-pink: #ffdde2;
+$secondary-pink: #faa094;
 $primary-grey: #303030;
-$secondary-grey: #949494;
+$secondary-grey: #999999;
+
+$desktop: 1200px;
 
 :root {
   --side-margin: 1rem;
+  --full-width: calc(100vw - (2 * var(--side-margin)));
 
   @media only screen and (min-width: 768px) {
     --side-margin: 3rem;
@@ -24,5 +28,11 @@ $secondary-grey: #949494;
 @keyframes arrow {
   to {
     background-position: 1000% 0;
+  }
+}
+
+@keyframes moreShift {
+  to {
+    background-position: 100% -100%;
   }
 }

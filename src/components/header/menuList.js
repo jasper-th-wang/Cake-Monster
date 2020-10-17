@@ -6,6 +6,9 @@ import classes from './menuList.module.scss';
 import FacebookSVG from '../../assets/svgs/facebook.inline.svg';
 import InstaSVG from '../../assets/svgs/instagram.inline.svg';
 import WechatSVG from '../../assets/svgs/wechat.inline.svg';
+/**
+ * modeled after ripeplanet.com and tobiasahlin.com/
+ */
 
 const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
 

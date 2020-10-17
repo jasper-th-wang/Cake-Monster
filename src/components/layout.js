@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header/header";
+import Footer from './Footer';
 import "../assets/sass/main.scss";
 
 const Layout = ({ children }) => {
@@ -20,9 +21,7 @@ const Layout = ({ children }) => {
     <div className="main-container">
       <Header siteTitle={ data.site.siteMetadata?.title || `Title` } />
       <main>{ children }</main>
-      <footer className="footer">
-        © { new Date().getFullYear() } Cake Monster All rights reserved.
-        </footer>
+      <Footer />
     </div>
   )
 }

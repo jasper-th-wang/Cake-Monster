@@ -16,11 +16,13 @@ h1 {
 }
 
 h2 {
+  font-family: "Archivo Black", sans-serif;
   font-size: 2.7em;
   font-weight: 900;
 }
 
 h3 {
+  font-family: "Judson", serif;
   font-size: 2.4em;
 }
 
@@ -33,6 +35,7 @@ p {
 li {
   font-size: 2.4em;
   font-family: "Archivo Black", sans-serif;
+  list-style-type: none;
   // color: #ffb6c1;
   // text-shadow: -4px 4px 0px $primary-pink;
 }

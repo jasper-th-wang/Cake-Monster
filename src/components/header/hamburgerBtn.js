@@ -10,10 +10,11 @@ const HamburgerBtn = ({ menuToggled, toggleMenuHandler, setCloseMenuLocation }) 
       ${ menuToggled ? classes.isActive : null }
       ` }
     type="button"
-    onClick={ toggleMenuHandler }
+    // onClick={ toggleMenuHandler }
     onTap={ (event, info) => {
       const yOffset = window.pageYOffset;
       setCloseMenuLocation({ x: info.point.x, y: (info.point.y - yOffset) });
+      toggleMenuHandler();
     } }
   >
     <span className={ classes.hamburgerBox }>

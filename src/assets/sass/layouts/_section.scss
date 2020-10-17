@@ -12,7 +12,13 @@
 
   h2 {
     margin: 0;
-    color: $primary-grey;
+    // color: $primary-grey;
+    color: #fff;
+  }
+
+  &__sub-title {
+    margin: 0;
+    text-align: center;
   }
 
   &--intro {
@@ -25,15 +31,29 @@
 
   &--white {
     color: $primary-grey;
+
+    h2 {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $primary-grey;
+      -webkit-text-fill-color: #fff;
+    }
   }
+
   &--pink {
     color: $primary-grey;
     background-color: $primary-pink;
+    h2 {
+      text-shadow: -4px 4px 0px $primary-green;
+    }
   }
 
   &--green {
     color: $primary-grey;
     background-color: $primary-green;
+
+    h2 {
+      text-shadow: -4px 4px 0px $secondary-pink;
+    }
   }
 
   &--grey {
