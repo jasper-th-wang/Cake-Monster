@@ -21,15 +21,8 @@
     text-align: center;
   }
 
-  &--intro {
-    padding: 5rem var(--side-margin) 5rem var(--side-margin);
-
-    @media only screen and (min-width: 1200px) {
-      padding: 6rem var(--side-margin) 6rem var(--side-margin);
-    }
-  }
-
   &--white {
+    @extend .section;
     color: $primary-grey;
 
     h2 {
@@ -40,6 +33,7 @@
   }
 
   &--pink {
+    @extend .section;
     color: $primary-grey;
     background-color: $primary-pink;
     h2 {
@@ -48,32 +42,13 @@
   }
 
   &--green {
+    @extend .section;
     color: $primary-grey;
     background-color: $primary-green;
 
     h2 {
       text-shadow: -4px 4px 0px $secondary-pink;
     }
-  }
-
-  &--grey {
-    background-color: $primary-grey;
-    color: #ffffff;
-
-    @media only screen and (min-width: 1200px) {
-      // temporary color
-      background-color: $secondary-grey;
-    }
-
-    p {
-      color: currentColor;
-    }
-  }
-
-  &--about-us {
-    padding: calc(var(--side-margin) * 1.5);
-    // padding-left: calc(var(--side-margin) * 2);
-    // padding-right: calc(var(--side-margin) * 2);
   }
 
   &__content {
@@ -87,13 +62,6 @@
     p {
       @media only screen and (min-width: 992px) {
         margin-right: 20%;
-      }
-    }
-    &--about-us {
-      p {
-        @media only screen and (min-width: 992px) {
-          margin-right: 0;
-        }
       }
     }
 

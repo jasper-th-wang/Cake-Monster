@@ -42,21 +42,21 @@ const IndexPage = () => {
           <p>No, really, I mean it.</p>
         </div>
       </div>
-      <section className="section section--green intro-sec">
+      <section className="section--green intro-sec">
         <h2>Beyond your Imagination</h2>
         <div className="section__content">
           <p>Sausage pork frankfurter rump boudin doner turducken shank tri-tip pork belly porchetta hamburger tenderloin ground round beef. Shankle doner jerky, meatloaf strip steak drumstick salami </p>
         </div>
         <Masonry />
       </section>
-      <section className="section section--pink service-sec">
+      <section className="section--pink service-sec">
         <h2>Services</h2>
         <div className="section__content">
           <p>Sausage pork frankfurter rump boudin doner turducken shank tri-tip pork belly porchetta hamburger tenderloin ground round beef. Shankle doner jerky, meatloaf strip steak drumstick salami </p>
         </div>
         <InfoCard />
       </section>
-      <section className="section section--white tea-sec">
+      <section className="section--white tea-sec">
         <h2>Time for a tea break?</h2>
         <Img fluid={ imageData.tea_line.childImageSharp.fluid } alt={ imageData.tea_line.childImageSharp.fluid.originalName } className="tea-photo" />
         <div className="section__content">
@@ -64,7 +64,7 @@ const IndexPage = () => {
           <button className="outline-btn">VISIT ME!</button>
         </div>
       </section>
-      <section className="section section--pink about-sec">
+      <section className="section--pink about-sec">
         <h3 className="section__sub-title">About me</h3>
         <Img fluid={ imageData.about_me.childImageSharp.fluid } alt={ imageData.about_me.childImageSharp.fluid.originalName } className="about-me-photo" />
         <div className="section__content about-content">

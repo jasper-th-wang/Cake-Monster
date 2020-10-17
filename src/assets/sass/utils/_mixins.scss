@@ -19,12 +19,26 @@
   }
 }
 
-@mixin duotone-pink($pink: true) {
+@mixin duotone($color: "pink") {
+  $bgcolor: null;
+  $fgcolor: null;
+
+  @if $color == "pink" {
+    $bgcolor: $secondary-pink;
+    $fgcolor: $primary-pink;
+  } @else if $color == "green" {
+    $bgcolor: $primary-green;
+    $fgcolor: $secondary-green;
+  } @else if $color == "purple" {
+    $bgcolor: #776885;
+    $fgcolor: #b05cff;
+  }
+
   position: relative;
 
   img {
     filter: grayscale(100%) contrast(1.2) brightness(0.8);
-    transition: opacity 500ms ease 0s, filter 1s 0.3s, transform 1s !important;
+    transition: opacity 500ms ease 0s, filter 1s, transform 1s !important;
   }
 
   &:hover img {
@@ -32,63 +46,35 @@
     transform: scale(1.1);
   }
 
-  @if $pink {
-    &::before {
-      background-color: $secondary-pink;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: hard-light;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+  &::before {
+    background-color: $bgcolor;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
 
-    &::after {
-      background-color: $primary-pink;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: soft-light;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-  } @else {
-    &::before {
-      background-color: $primary-green;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: hard-light;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-
-    &::after {
-      background-color: $secondary-green;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: soft-light;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+  &::after {
+    background-color: $fgcolor;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
 
   &::after,
   &::before {
-    transition: all 2s;
+    transition: all 1s;
   }
 
   &:hover {
@@ -149,3 +135,31 @@
     animation: arrow 100s linear infinite;
   }
 }
+
+/**
+   &::before {
+      background-color: $primary-green;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: hard-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    &::after {
+      background-color: $secondary-green;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: soft-light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    */
