@@ -15,16 +15,15 @@ body {
 }
 
 // index:
-.intro-sec {
+.jagged-bottom-pink {
   @include jaggedEdges($primary-pink);
 }
 
-.service-sec {
+.jagged-bottom-white {
   @include jaggedEdges(#fff);
 }
 
-.tea-sec {
-  @include jaggedEdges($primary-pink);
+.tea-photo {
 }
 
 .about-sec {
@@ -33,4 +32,20 @@ body {
 
 .about-content {
   text-align: center;
+  @include desktop {
+    text-align: left;
+  }
+}
+
+@include desktop {
+  .l-section-grid {
+    height: 30rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    &__item {
+    }
+  }
 }
