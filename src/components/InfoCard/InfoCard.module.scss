@@ -1,0 +1,48 @@
+@import "../../assets/sass/utils/variables";
+@import "../../assets/sass/utils/mixins";
+
+.wrapper {
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: var(--full-width);
+
+    @media only screen and (min-width: 600px) {
+      height: var(--full-width);
+    }
+
+    display: grid;
+    grid-template-rows: min-content minmax(auto, 10rem);
+    margin-bottom: 3rem;
+
+    @include desktop {
+      width: 40%;
+    }
+  }
+
+  .content {
+    margin-top: var(--side-margin);
+    position: relative;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .photo {
+    width: 100%;
+    height: 0;
+    padding-top: 66.6666666%;
+  }
+}
+
+@include desktop {
+  .photo1 {
+    @include duotone("green");
+  }
+  .photo2 {
+    @include duotone;
+  }
+}

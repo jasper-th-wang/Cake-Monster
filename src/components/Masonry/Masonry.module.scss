@@ -1,0 +1,122 @@
+@import "../../assets/sass/utils/variables";
+@import "../../assets/sass/utils/mixins";
+
+.wrapper {
+  width: var(--full-width);
+  padding-bottom: 3rem; // add 3rem to bottom of the section to balance the top
+  // display: grid;
+  // grid-template-columns: 100vw;
+  // grid-template-rows: repeat(auto-fit, 100vw);
+  // margin: 0 calc(var(--side-margin) * -1);
+  @include desktop {
+    height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "a b c c"
+      "a e f f";
+  }
+}
+
+.photo {
+  all: unset;
+  display: block;
+  overflow: hidden;
+  height: var(--full-width);
+  margin-bottom: var(--side-margin);
+
+  &:nth-child(n + 4) {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.viewMore {
+  width: 100%;
+  height: var(--full-width);
+  background-color: #faa094ff;
+  color: #9ed9ccff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+/** desktop grid area management, and individual photo */
+
+@include desktop {
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .minion {
+    grid-area: b;
+    // @include duotone("green");
+  }
+
+  .pubg {
+    grid-area: a;
+    @include duotone;
+  }
+
+  .alcohol {
+    grid-area: c;
+    // @include duotone("purple");
+    @include duotone("green");
+    img {
+      transition: opacity 500ms ease 0s, transform 1s !important;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .princess {
+    grid-area: d;
+    // @include duotone("purple");
+    img {
+      transition: opacity 500ms ease 0s, transform 1s !important;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .money {
+    grid-area: e;
+    // @include duotone("green");
+  }
+
+  .viewMore {
+    grid-area: f;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: $secondary-green;
+    color: $secondary-pink;
+
+    &:hover {
+      color: $primary-green;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 20 20'%3E%3Cg fill-opacity='1'%3E%3Cpolygon fill='%23ffdde2' fill-opacity='1' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%23ffdde2' fill-opacity='1' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E");
+      animation: moreShift 10s linear infinite;
+    }
+  }
+}
