@@ -10,15 +10,18 @@ import WechatSVG from '../../assets/svgs/wechat.inline.svg';
  * modeled after ripeplanet.com and tobiasahlin.com
  */
 
-const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
+// item that is an array contains the name of the page and the camel case of it for Link
+const menuItems = [['Home', ''], ['Services', 'services'], ['Gallery', 'gallery'], ['About me', 'about-me']];
 
-  // item that is an array contains the name of the page and the camel case of it for Link
-  const menuItems = [['Home', ''], ['Services', 'services'], ['Gallery', 'gallery'], ['About me', 'about-me']];
+const contactInfo = {
+  phoneNumber: "(778) 828-1826",
+  addressLineOne: "129 Esplanade Ave E,",
+  addressLineTwo: "North Vancouver, BC V7L, Canada"
+}
 
-  const scrollLockTarget = useScrollLock(menuToggled);
+const variants = {
 
-
-  const parentVariants = {
+  parentVariants: {
     hidden: {},
     visible: {
       transition: {
@@ -30,9 +33,9 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
         delayChildren: 0.2,
       }
     }
-  }
+  },
 
-  const divVariants = {
+  divVariants: {
     hidden: {
       opacity: 0,
       translateY: '-1rem',
@@ -55,9 +58,9 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
         damping: 300,
       }
     }
-  }
+  },
 
-  const liVariants = {
+  liVariants: {
     hidden: {
       height: '0rem',
       overflow: 'hidden',
@@ -81,6 +84,13 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
       }
     }
   }
+}
+
+
+
+const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
+
+  const scrollLockTarget = useScrollLock(menuToggled);
 
   return (
     <motion.div
@@ -114,13 +124,13 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
 
       <div className={ classes.menuList } ref={ scrollLockTarget }>
         <motion.ul
-          variants={ parentVariants }
+          variants={ variants.parentVariants }
           initial="hidden"
           animate={ menuToggled ? "visible" : "hidden" }
         >
           { menuItems.map((item, index) => (
-            <motion.div key={ index } variants={ divVariants }>
-              <motion.li variants={ liVariants }
+            <motion.div key={ index } variants={ variants.divVariants }>
+              <motion.li variants={ variants.liVariants }
                 onClick={ toggleMenuHandler }>
                 <Link to={ `/${ item[1] }` }>
                   { item[0] }
@@ -129,7 +139,7 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
             </motion.div>
           )) }
           <motion.div
-            variants={ divVariants }
+            variants={ variants.divVariants }
             className={ classes.menuListContact }
           >
             <h3>Social</h3>
@@ -137,9 +147,9 @@ const MenuList = ({ menuToggled, toggleMenuHandler, closeMenuLocation }) => {
             <InstaSVG />
             <WechatSVG />
             <h3>Get in Touch!</h3>
-            <p>(778) 828-1826</p>
+            <p>{ contactInfo.phoneNumber }</p>
             <p>
-              129 Esplanade Ave E,<br />North Vancouver, BC V7L, Canada</p>
+              { contactInfo.addressLineOne }<br />{ contactInfo.addressLineTwo }</p>
           </motion.div>
         </motion.ul>
       </div>
